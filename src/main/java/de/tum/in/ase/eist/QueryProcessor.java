@@ -74,6 +74,7 @@ public class QueryProcessor {
         } catch (Exception e) {
             return "";
         }
+        return "";
     }
 
     long fib(long num) {
