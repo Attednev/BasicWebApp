@@ -21,6 +21,18 @@ public class QueryProcessor {
                     return (Integer.parseInt(n1) + Integer.parseInt(n2)) + "";
                 }
                 return "";
+            } else if (query.contains("which of the following numbers is both a square and a cube: ")) {
+                String str = query.split("which of the following numbers is the largest: ")[0];
+                String[] numbers = str.split(", ");
+                for (int i = 0; i < numbers.length; i++) {
+                    int num = Integer.parseInt(numbers[i]);
+                    double s_root = Math.sqrt(num);
+                    double c_root = Math.cbrt(num);
+                    if (Math.floor(croot) == c_root && Math.floor(s_root) == s_root) {
+                        return numbers[i];
+                    }
+                }
+                return "";
             } else if (query.contains("which of the following numbers is the largest: ")) {
                 String str = query.split("which of the following numbers is the largest: ")[0];
                 String[] numbers = str.split(", ");
