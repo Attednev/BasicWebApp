@@ -21,6 +21,15 @@ public class QueryProcessor {
                     return (Integer.parseInt(n1) + Integer.parseInt(n2)) + "";
                 }
                 return "";
+            } else if (query.contains("which of the following numbers are primes: ")) {
+                String str = query.split("which of the following numbers are primes: ")[0];
+                String[] numbers = str.split(", ");
+                for (int i = 0; i < numbers.length; i++) {
+                    int num = Integer.parseInt(numbers[i]);
+                    if (isPrime(num)) {
+                        return numbers[i];
+                    }
+                }
             } else if (query.contains(" number in the Fibonacci sequence")) {
                 String str = query.split(" number in the Fibonacci sequence")[0];
                 str = str.split("what is the ")[0];
@@ -32,7 +41,7 @@ public class QueryProcessor {
 
                 return fib(num) "";
             } else if (query.contains("which of the following numbers is both a square and a cube: ")) {
-                String str = query.split("which of the following numbers is the largest: ")[0];
+                String str = query.split("which of the following numbers is both a square and a cube: ")[0];
                 String[] numbers = str.split(", ");
                 for (int i = 0; i < numbers.length; i++) {
                     int num = Integer.parseInt(numbers[i]);
@@ -76,5 +85,17 @@ public class QueryProcessor {
             b1 = b3;
         }
         return b1;
+    }
+
+    boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
