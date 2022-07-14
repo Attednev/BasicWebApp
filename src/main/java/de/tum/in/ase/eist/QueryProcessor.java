@@ -22,7 +22,7 @@ public class QueryProcessor {
                 }
                 return "";
             } else if (query.contains("which of the following numbers is the largest: ")) {
-                String str = query.split("which of the following numbers is the largest: ");
+                String str = query.split("which of the following numbers is the largest: ")[0];
                 String[] numbers = str.split(", ");
                 int max = 0;
                 for (int i = 0; i < numbers.length; i++) {
