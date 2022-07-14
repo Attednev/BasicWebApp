@@ -39,7 +39,7 @@ public class QueryProcessor {
                 str = str.split("th")[0];
                 int num = Integer.parseInt(str);
 
-                return fib(num) "";
+                return fib(num) + "";
             } else if (query.contains("which of the following numbers is both a square and a cube: ")) {
                 String str = query.split("which of the following numbers is both a square and a cube: ")[0];
                 String[] numbers = str.split(", ");
