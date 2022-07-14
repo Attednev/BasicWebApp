@@ -28,7 +28,7 @@ public class QueryProcessor {
                     int num = Integer.parseInt(numbers[i]);
                     double s_root = Math.sqrt(num);
                     double c_root = Math.cbrt(num);
-                    if (Math.floor(croot) == c_root && Math.floor(s_root) == s_root) {
+                    if (Math.floor(c_root) == c_root && Math.floor(s_root) == s_root) {
                         return numbers[i];
                     }
                 }
