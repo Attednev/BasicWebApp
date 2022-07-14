@@ -21,6 +21,16 @@ public class QueryProcessor {
                     return (Integer.parseInt(n1) + Integer.parseInt(n2)) + "";
                 }
                 return "";
+            } else if (query.contains(" number in the Fibonacci sequence")) {
+                String str = query.split(" number in the Fibonacci sequence")[0];
+                str = str.split("what is the ")[0];
+                str = str.split("st")[0];
+                str = str.split("nd")[0];
+                str = str.split("rd")[0];
+                str = str.split("th")[0];
+                int num = Integer.parseInt(str);
+
+                return fib(num) "";
             } else if (query.contains("which of the following numbers is both a square and a cube: ")) {
                 String str = query.split("which of the following numbers is the largest: ")[0];
                 String[] numbers = str.split(", ");
@@ -55,5 +65,16 @@ public class QueryProcessor {
         } catch (Exception e) {
             return "";
         }
+    }
+
+    long fib(long num) {
+        long b1 = 1;
+        long b2 = 1;
+        for (int i = 1; i < num; i++){
+            long b3 = b2;
+            b2 = b2 + b1;
+            b1 = b3;
+        }
+        return b1;
     }
 }
